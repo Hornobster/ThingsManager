@@ -3,8 +3,10 @@
  */
 var path = require('path');
 
-module.exports = {
+const config = {
     rootUrl: 'http://localhost:3000',
     dbFile: path.join(__dirname, 'app.db'),
     testDbFile: path.join(__dirname, 'test.db')
 };
+
+module.exports = config;
