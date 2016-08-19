@@ -4,6 +4,6 @@
 
 var TestPersonModel = require('./model/testPersonModel.js');
 
-describe('Model', function () {
+describe('Model', () => {
     describe('Person', TestPersonModel);
 });
