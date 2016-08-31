@@ -9,6 +9,7 @@ var sqlite3 = require('sqlite3');
 var config = require('./config.js');
 var PermanentDb = require('./utils/createDbConnection.js').PermanentDb;
 
+var apiRoutes = require('./routes/api.js');
 
 // if we are testing
 var db;
@@ -37,6 +38,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// main routes
+app.use('/api', apiRoutes(db));
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
