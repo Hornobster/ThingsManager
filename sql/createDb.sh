@@ -5,10 +5,10 @@ echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     # do dangerous stuff
-    cp ./app.db ./app.db.backup
-    echo "Backup DB: app.db.backup"
+    cp $1 $1".backup"
+    echo "Backup DB: "$1".backup"
 
-    echo "New db: app.db"
-    sqlite3 ./app.db < ./sql/createPeopleSchema.sql
+    echo "New db: "$1
+    sqlite3 $1 < ./sql/createPeopleSchema.sql
     echo "People schema created."
 fi

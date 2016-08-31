@@ -7,4 +7,13 @@ function createInMemoryDb() {
     return new sqlite3.Database(':memory:');
 }
 
-module.exports = createInMemoryDb;
+function openPermanentDb(filename) {
+    return new sqlite3.Database(filename);
+}
+
+var createDbConnection = {
+    InMemoryDb: createInMemoryDb,
+    PermanentDb: openPermanentDb
+};
+
+module.exports = createDbConnection;

@@ -6,7 +6,7 @@ var should = require('should');
 var Person = require('../../model/person.js');
 var PeopleDAO = require('../../db/peopleDAO.js');
 
-var InMemoryDb = require('../../utils/createMemoryDb.js');
+var InMemoryDb = require('../../utils/createDbConnection.js').InMemoryDb;
 
 function getDefaultValidPerson() {
     return new Person(
@@ -18,7 +18,7 @@ function getDefaultValidPerson() {
 
 function TestPeopleDAO() {
     describe('insertInto, getAll and getId', () => {
-        it('getAll should return list of people insertInto\'d DB', done => {
+        it('should return list of people insertInto\'d DB', done => {
             let db = InMemoryDb();
 
             let p = getDefaultValidPerson();
@@ -48,7 +48,7 @@ function TestPeopleDAO() {
                 });
         });
 
-        it('getId should return the person insertInto\'d DB', done => {
+        it('should return the person insertInto\'d DB', done => {
             let db = InMemoryDb();
 
             let p = getDefaultValidPerson();

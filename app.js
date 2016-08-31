@@ -7,8 +7,16 @@ var bodyParser = require('body-parser');
 var sqlite3 = require('sqlite3');
 
 var config = require('./config.js');
+var PermanentDb = require('./utils/createDbConnection.js').PermanentDb;
 
-var db = new sqlite3.Database(config.dbFile);
+
+// if we are testing
+var db;
+if (process.env.TEST === 'true') {
+    db = PermanentDb(config.testDbFile);
+} else {
+    db = PermanentDb(config.dbFile);
+}
 
 // this function runs when the server is shutting down
 require('./utils/cleanup.js').Cleanup(() => {
