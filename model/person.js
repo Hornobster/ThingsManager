@@ -9,7 +9,7 @@ class Person {
                 currentaddress, currentcity, currentcountry) {
         this.firstname = firstname;
         this.lastname = lastname;
-        this.birthday = birthday;
+        this.birthday = new Date(birthday);
         this.notes = notes;
         this.homecity = homecity;
         this.homecountry = homecountry;
@@ -39,7 +39,7 @@ class Person {
         }
 
         // check if birthday is a valid timestamp
-        if (p.birthday && !TypeCheck.isDate(new Date(p.birthday)))
+        if (p.birthday && !TypeCheck.isDate(p.birthday))
         {
             return false;
         }

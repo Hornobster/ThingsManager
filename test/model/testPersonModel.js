@@ -22,7 +22,7 @@ function TestPersonModel() {
 
             x.should.equal(true);
 
-            done()
+            done();
         });
 
         {
@@ -37,7 +37,7 @@ function TestPersonModel() {
 
                     x.should.equal(false);
 
-                    done()
+                    done();
                 });
             }
         }
@@ -70,7 +70,7 @@ function TestPersonModel() {
 
                     x.should.equal(false);
 
-                    done()
+                    done();
                 });
             }
         }
@@ -87,7 +87,7 @@ function TestPersonModel() {
 
                     x.should.equal(false);
 
-                    done()
+                    done();
                 });
             }
         }

@@ -60,7 +60,7 @@ function insertInto(db, person) {
                 [
                     person.firstname,
                     person.lastname,
-                    person.birthday,
+                    person.birthday.getTime(),
                     person.notes,
                     person.homecity,
                     person.homecountry,
